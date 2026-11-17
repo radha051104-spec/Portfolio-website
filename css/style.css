@@ -406,3 +406,14 @@ img { max-width: 100%; display: block; }
     object-fit: cover;
     border-radius: 50%;
 }
+/* Family banner: show the whole group photo without cropping */
+.family-banner {
+  height: auto;
+  max-width: 460px;
+  margin: 0 auto var(--spacing-lg);
+}
+.family-banner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
