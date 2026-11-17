@@ -62,4 +62,46 @@
       card.classList.toggle('flipped');
     });
   });
+
+  // ---------- Hobby lightbox ----------
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxTitle = document.getElementById('lightboxTitle');
+  var lightboxText = document.getElementById('lightboxText');
+  var lightboxClose = document.getElementById('lightboxClose');
+
+  function openLightbox(item) {
+    var img = item.querySelector('img');
+    lightboxImg.src = img.getAttribute('src');
+    lightboxImg.alt = img.getAttribute('alt');
+    lightboxImg.hidden = item.classList.contains('img-missing');
+    lightboxTitle.textContent = item.getAttribute('data-title');
+    lightboxText.textContent = item.getAttribute('data-text');
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () { openLightbox(item); });
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(item);
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) { closeLightbox(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeLightbox(); }
+  });
 })();
