@@ -280,3 +280,79 @@ img { max-width: 100%; display: block; }
 @media (max-width: 600px) {
   .family-grid { grid-template-columns: 1fr; }
 }
+/* ================= HOBBIES GALLERY ================= */
+.gallery { columns: 3; column-gap: var(--spacing-lg); }
+.gallery-item {
+  position: relative;
+  height: 260px;
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  break-inside: avoid;
+  box-shadow: 0 6px 18px var(--color-shadow);
+  transition: transform var(--transition-speed);
+}
+.gallery-item.tall { height: 360px; }
+.gallery-item:hover { transform: scale(1.03); }
+.gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  color: var(--color-text-inverse);
+  background: var(--color-overlay);
+  font-weight: 600;
+}
+
+/* ================= LIGHTBOX ================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: var(--color-overlay);
+}
+.lightbox.open { display: flex; }
+.lightbox-content {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  animation: fadeIn var(--transition-speed) ease;
+}
+.lightbox-content img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  background: var(--color-placeholder-start);
+}
+.lightbox-content h3 { color: var(--color-primary); margin-bottom: var(--spacing-sm); }
+.lightbox-content p { color: var(--color-text-secondary); }
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Hobbies responsive */
+@media (max-width: 992px) {
+  .gallery { columns: 2; }
+}
+@media (max-width: 600px) {
+  .gallery { columns: 1; }
+}
