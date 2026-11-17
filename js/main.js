@@ -104,4 +104,18 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeLightbox(); }
   });
+
+  // ---------- Footer: current year ----------
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- Back to top button ----------
+  var backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', function () {
+    backToTop.classList.toggle('show', window.scrollY > 400);
+  });
+
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 })();
