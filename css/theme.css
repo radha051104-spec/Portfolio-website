@@ -1,37 +1,37 @@
 /* =====================================================
-   THEME FILE - Light Theme (Default)
+   THEME FILE - Dark Theme
    Change ONLY this file to change the whole site's look
    ===================================================== */
 :root {
   /* Primary Colors */
-  --color-primary: #2c3e50;
-  --color-primary-light: #3498db;
-  --color-primary-dark: #1a252f;
+  --color-primary: #1abc9c;
+  --color-primary-light: #48d1cc;
+  --color-primary-dark: #16a085;
 
   /* Background Colors */
-  --color-bg: #ffffff;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-card: #ffffff;
+  --color-bg: #1a1a2e;
+  --color-bg-secondary: #16213e;
+  --color-bg-card: #0f3460;
 
   /* Text Colors */
-  --color-text: #2c3e50;
-  --color-text-secondary: #6c757d;
-  --color-text-inverse: #ffffff;
+  --color-text: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --color-text-inverse: #1a1a2e;
 
   /* Accent & Borders */
-  --color-accent: #e74c3c;
-  --color-border: #dee2e6;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-accent: #e94560;
+  --color-border: #2a2a4a;
+  --color-shadow: rgba(0, 0, 0, 0.4);
 
   /* Extra helpers (overlays, placeholders) */
   --color-overlay: rgba(0, 0, 0, 0.8);
-  --color-placeholder-start: #dbe9f6;
-  --color-placeholder-end: #f3dcd9;
+  --color-placeholder-start: #16213e;
+  --color-placeholder-end: #0f3460;
 
   /* Family section warm sub-palette */
-  --family-bg: #fff6ee;
+  --family-bg: #2a1f1a;
   --family-card-back: #e67e22;
-  --family-text: #5a3a1e;
+  --family-text: #f0d9c4;
 
   /* Typography */
   --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
