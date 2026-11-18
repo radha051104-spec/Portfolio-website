@@ -26,5 +26,6 @@ jobs:
       - name: Validate HTML files
         run: htmlhint "*.html" --config .htmlhintrc
 
-           - name: Validate CSS files
-        run: csslint css/style.css --quiet || true
+      - name: Validate CSS files
+        continue-on-error: true
+        run: csslint css/style.css --quiet
